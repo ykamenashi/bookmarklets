@@ -23,5 +23,6 @@ EOS
 )
 
 NO_NEWLINE_STR=$(tr -d '\n' < "${INPUT_FILE}")
+NO_INDENT_STR=$(echo $NO_NEWLINE_STR | sed -e 's/    [ ]*//g')
 
-echo "${BML_CAP}${NO_NEWLINE_STR}${BML_TAIL}"
+echo "${BML_CAP}${NO_INDENT_STR}${BML_TAIL}"
